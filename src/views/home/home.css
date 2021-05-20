@@ -1,0 +1,36 @@
+.header {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  max-height: 70vh;
+}
+
+
+.header img{
+  width: 100%;
+
+}
+
+.title-header {
+  color: white;
+  position: fixed;
+  margin-left: 70%;
+  font-size: 60px;
+  top: 10%;
+}
+
+.content-card {
+  width: 200px;
+  margin: auto;
+  border: groove;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.content-card img {
+  width: 200px;
+}
+
+.content {
+  display: flex;
+}
