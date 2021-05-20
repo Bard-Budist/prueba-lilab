@@ -1,7 +1,8 @@
 const {
   createProduct,
   getProducts,
-  getProductsByCategory
+  getProductsByCategory,
+  shopStock
 } = require('./dbOperations');
 const {
   getCategory
@@ -36,8 +37,21 @@ const getProductByCategoryService = async (category) => {
   }
 }
 
+const setStockService = async (id, stock, cant) => {
+  try {
+    const stockFinal = stock - cant;
+    if (stockFinal < 0) {
+      throw new Error("Stock invalid");
+    }
+    return await shopStock(id, stockFinal)
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 module.exports = {
   createProductService,
   getProductService,
-  getProductByCategoryService
+  getProductByCategoryService,
+  setStockService
 }

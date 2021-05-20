@@ -39,9 +39,23 @@ const getProductsByCategory = async (category) => {
   }
 }
 
+const shopStock = async (id, cant) => {
+  try {
+
+    const sql = `UPDATE lilab.product
+    SET stock=${cant}
+    WHERE id=${id};
+    `
+    return await query(sql);
+  } catch (error) {
+    throw new Error("Error operation stock -dbOperations " +  error);
+  }
+}
+
 module.exports = {
   createProduct,
   getProducts,
-  getProductsByCategory
+  getProductsByCategory,
+  shopStock
 }
 

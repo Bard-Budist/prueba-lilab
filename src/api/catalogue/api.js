@@ -3,7 +3,8 @@ const router = express.Router();
 const {
   getProductService,
   getProductByCategoryService,
-  createProductService
+  createProductService,
+  setStockService
 } = require('../../services/catalogue/service');
 
 router.get('/products', async (res, req) => {
@@ -24,7 +25,6 @@ router.get('/products/:category', async (res, req) => {
   }
 });
 
-
 router.post('/products', async (res, req) => {
   try {
     const {
@@ -40,5 +40,21 @@ router.post('/products', async (res, req) => {
     req.status(500).send("Erros " + error)
   }
 });
+
+
+router.put('/product/stock', async (res, req) => {
+  try {
+    const {
+      id,
+      stock,
+      cant
+    } = req.req.body;
+    await setStockService(id, stock, cant);
+    req.send({ status: 'ok'});
+  } catch (error) {
+    console.log(error);
+    req.status(500).send("Erros " + error)
+  }
+})
 
 module.exports = router;
