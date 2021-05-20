@@ -1,0 +1,25 @@
+{
+  "name": "prueba-lilab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bard-Budist/prueba-lilab.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bard-Budist/prueba-lilab/issues"
+  },
+  "homepage": "https://github.com/Bard-Budist/prueba-lilab#readme",
+  "dependencies": {
+    "dotenv": "^9.0.2",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "util": "^0.12.3"
+  }
+}
